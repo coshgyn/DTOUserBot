@@ -1,7 +1,7 @@
 # U S Σ R Δ T O R / Ümüd
 
 """ Admin """
-
+# salam
 from asyncio import sleep
 from os import remove
 
