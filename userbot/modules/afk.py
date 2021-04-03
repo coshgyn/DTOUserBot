@@ -1,5 +1,5 @@
 # U S Σ R Δ T O R / Ümüd 
-
+#
 """ AFK """
 
 from random import randint
