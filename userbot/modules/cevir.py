@@ -1,4 +1,4 @@
-# U S Σ R Δ T O R / Ümüd
+# U S Σ R Δ T O R / Ümüd #
 
 from userbot import CMD_HELP
 from userbot.events import register
