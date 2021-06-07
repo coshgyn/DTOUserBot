@@ -117,7 +117,7 @@ async def song(event):
             "logtostderr": False,
         }
     try:
-        await x.edit("`Məlumatlar gətirilir...`")
+        await x.edit(LANG['UPLOADİNG'])
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
@@ -154,14 +154,13 @@ async def song(event):
     else:
         thumb = None
     upteload = """
-Yüklənilir...
-Musiqi adı - {}
-{} tərəfindən
+» {}
+» {}
 """.format(
         rip_data["title"], rip_data["uploader"]
     )
     await x.edit(f"`{upteload}`")
-    CAPT = f"» **{rip_data['title']}**" + LANG['UPLOADED_WITH']
+    CAPT = f"» **{rip_data['title']}**\n" + LANG['UPLOADED_WITH']
     await bot.send_file(
         event.chat_id,
         f"{rip_data['id']}.mp3",
