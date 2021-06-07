@@ -19,7 +19,7 @@ from youtubesearchpython import SearchVideos
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from userbot import bot, CMD_HELP
+from userbot import bot, CMD_HELP, SUDO_ID
 from userbot.events import register
 import os
 import subprocess
@@ -77,8 +77,9 @@ async def deezl(event):
             await event.delete()
 
 @register(outgoing=True, pattern="^.song ?(.*)")
+@register(incoming=True, from_users=SUDO_ID, pattern="^.song ?(.*)")
     # Ported from Ultroid for Userator
-async def download_video(event):
+async def song(event):
     a = event.text
     if a[5] == "s":
         return
